@@ -1,0 +1,4 @@
+rootProject.name = 'nao-bot'
+
+include 'common', 'cache', 'middle', 'face', 'speechkit', 'nlp'
+

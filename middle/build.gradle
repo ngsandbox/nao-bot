@@ -1,0 +1,32 @@
+group 'org.ngsandbox'
+version '00.001.00'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'ngsanbox-rest-service'
+    version =  project.version
+}
+
+dependencies {
+    compile project(':common')
+    compile project(':nlp')
+    compile project(':cache')
+    compile project(":face")
+    compile("org.springframework.boot:spring-boot-starter-web")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

@@ -1,0 +1,22 @@
+group 'org.ngsandbox'
+version '00.001.00'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":common")
+    compile files('/opt/nlp/stanford-corenlp-full/stanford-corenlp-3.8.0-models.jar')
+
+    compile group: 'org.apache.opennlp', name: 'opennlp-tools', version: '1.8.3'
+    compile group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '3.8.0'
+    compile group: 'edu.stanford.nlp', name: 'stanford-parser', version: '3.8.0'
+
+//
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
